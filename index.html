@@ -1,0 +1,1085 @@
+<!doctype html>
+<html lang="id" class="is-locked">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#761f2a">
+  <title>Undangan Sangjit | Nama Mempelai</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --primary: hsl(40 49% 55%);
+      --cream: #fbf5e9;
+      --paper: #fffdf8;
+      --maroon: #761f2a;
+      --red: #a93436;
+      --gold: #bd9853;
+      --ink: #3d2924;
+      --muted: #806b5e;
+      --line: #e8d9bf;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: #eee5d9;
+      scroll-behavior: smooth;
+    }
+
+    html.is-locked {
+      overflow: hidden;
+      overscroll-behavior: none;
+    }
+
+    body.is-locked {
+      overflow: hidden;
+      overscroll-behavior: none;
+    }
+
+    body {
+      width: min(100%, 480px);
+      min-height: 100vh;
+      margin: 0 auto;
+      container-type: inline-size;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "Cormorant Garamond", serif;
+      line-height: 1.7;
+      box-shadow: 0 0 42px rgba(61, 41, 36, .12);
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .cover {
+      min-height: 100vh;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: 28px 20px;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      color: var(--cream);
+      isolation: isolate;
+      background: #651923;
+    }
+
+    body.is-locked .cover {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: min(100%, 480px);
+      z-index: 4;
+      transform: translateX(-50%);
+    }
+
+    .cover-floral {
+      position: absolute;
+      z-index: -1;
+      display: block;
+      pointer-events: none;
+      object-fit: cover;
+    }
+
+    .cover-floral-top {
+      top: 0;
+      left: 0;
+      width: min(100%, 760px);
+      height: min(30svh, 310px);
+      object-position: left top;
+      -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 38%, transparent 100%);
+      mask-image: linear-gradient(to bottom, #000 0%, #000 38%, transparent 100%);
+      animation: floral-enter-top 1.15s ease-out both;
+    }
+
+    .cover-floral-bottom {
+      right: 0;
+      bottom: 0;
+      width: min(100%, 780px);
+      height: min(25svh, 270px);
+      object-position: left bottom;
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 34%);
+      mask-image: linear-gradient(to bottom, transparent 0%, #000 34%);
+      animation: floral-enter-bottom 1.3s ease-out both;
+    }
+
+    .cover-inner {
+      width: min(100%, 550px);
+      padding: 25px 20px;
+      position: relative;
+      text-shadow: 0 1px 12px rgba(48, 9, 14, .3);
+      animation: cover-reveal .8s .12s both;
+    }
+
+    @keyframes cover-reveal {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floral-enter-top {
+      from {
+        opacity: 0;
+        transform: translate(-12px, -10px);
+      }
+
+      to {
+        opacity: .94;
+        transform: translate(0, 0);
+      }
+    }
+
+    @keyframes floral-enter-bottom {
+      from {
+        opacity: 0;
+        transform: translate(12px, 12px);
+      }
+
+      to {
+        opacity: .96;
+        transform: translate(0, 0);
+      }
+    }
+
+    .seal {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 6px;
+      display: grid;
+      place-items: center;
+      color: #e6ca77;
+      font-size: 54px;
+      line-height: 1;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: #a64943;
+      font-family: Arial, sans-serif;
+      font-size: .7rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .cover h1 {
+      margin: 12px 0;
+      color: #e6c46c;
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(3.2rem, 12vw, 5rem);
+      font-weight: 400;
+      letter-spacing: 0;
+      line-height: 1;
+    }
+
+    .cover .ampersand {
+      color: #a64943;
+      font-size: .72em;
+      font-style: italic;
+    }
+
+    .cover .guest {
+      min-height: 1.3em;
+      margin: 5px 0 15px;
+      color: #f0dfc3;
+      font-size: 1.2rem;
+    }
+
+    .cover .guest-label {
+      margin: 0;
+      color: #d7bd9b;
+      font-size: .9rem;
+    }
+
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 11px 24px;
+      border: 1px solid var(--gold);
+      border-radius: 2px;
+      color: #fffaf0;
+      background: var(--maroon);
+      text-decoration: none;
+      cursor: pointer;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .button:hover {
+      background: #5f1721;
+      transform: translateY(-1px);
+    }
+
+    .cover .button {
+      margin-top: 20px;
+      background: transparent;
+    }
+
+    .cover .button:hover {
+      background: rgba(255, 255, 255, .1);
+    }
+
+    .music-toggle {
+      position: fixed;
+      right: max(14px, calc((100vw - 480px) / 2 + 14px));
+      bottom: 18px;
+      z-index: 6;
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      border: 1px solid rgba(230, 202, 119, .8);
+      border-radius: 50%;
+      color: #fff8e9;
+      background: rgba(54, 15, 20, .8);
+      cursor: pointer;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, .2);
+    }
+
+    .music-toggle:hover {
+      background: #3e1018;
+    }
+
+    .music-toggle:focus-visible,
+    .cover .button:focus-visible {
+      outline: 2px solid #f1d88e;
+      outline-offset: 4px;
+    }
+
+    .music-toggle svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .music-toggle .icon-muted {
+      display: none;
+    }
+
+    .music-toggle[aria-pressed="false"] .icon-muted {
+      display: block;
+    }
+
+    .music-toggle[aria-pressed="false"] .icon-playing {
+      display: none;
+    }
+
+    .section {
+      padding: 88px 20px;
+      text-align: center;
+    }
+
+    .reveal-ready .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1);
+    }
+
+    .reveal-ready .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-inner {
+      width: min(100%, 760px);
+      margin: 0 auto;
+    }
+
+    .section h2 {
+      margin: 0;
+      color: var(--maroon);
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(2.4rem, 7vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    #couple .couple-card h2 {
+      white-space: nowrap;
+      font-size: clamp(1.8rem, 8vw, 4rem);
+    }
+
+    .ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      margin: 19px auto;
+      color: var(--gold);
+    }
+
+    .ornament::before,
+    .ornament::after {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      content: "";
+    }
+
+    .intro {
+      max-width: 580px;
+      margin: 0 auto 28px;
+      color: var(--muted);
+    }
+
+    .couple-card {
+      position: relative;
+      width: min(100%, 680px);
+      margin: 0 auto;
+      padding: 9px;
+      overflow: hidden;
+      background: #ad202a;
+      clip-path: polygon(0 18px, 18px 18px, 18px 0, calc(100% - 18px) 0, calc(100% - 18px) 18px, 100% 18px, 100% calc(100% - 18px), calc(100% - 18px) calc(100% - 18px), calc(100% - 18px) 100%, 18px 100%, 18px calc(100% - 18px), 0 calc(100% - 18px));
+      box-shadow: 0 14px 34px rgba(90, 31, 42, .16);
+    }
+
+    .couple-card::before {
+      position: absolute;
+      inset: 8px;
+      background: linear-gradient(145deg, #fffaf0, #f8eddf);
+      clip-path: polygon(0 13px, 13px 13px, 13px 0, calc(100% - 13px) 0, calc(100% - 13px) 13px, 100% 13px, 100% calc(100% - 13px), calc(100% - 13px) calc(100% - 13px), calc(100% - 13px) 100%, 13px 100%, 13px calc(100% - 13px), 0 calc(100% - 13px));
+      content: "";
+      pointer-events: none;
+    }
+
+    .couple-card-content {
+      position: relative;
+      z-index: 1;
+      padding: 38px 42px 34px;
+      text-align: center;
+    }
+
+    .couple-card .eyebrow {
+      margin: 0 0 12px;
+    }
+
+    .couple-card .intro {
+      margin-bottom: 26px;
+    }
+
+    .couple-card-ornament {
+      position: relative;
+      z-index: 1;
+      margin: 0 auto 17px;
+      color: var(--gold);
+      font-size: .9rem;
+      letter-spacing: .32em;
+      line-height: 1;
+    }
+
+    .couple {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      gap: 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .couple-name {
+      color: var(--maroon);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.1rem, 4.8vw, 2rem);
+      font-weight: 400;
+      line-height: 1.25;
+    }
+
+    .couple-name[data-groom-full-name] {
+      white-space: nowrap;
+      font-size: clamp(1.1rem, 4.8vw, 2rem);
+    }
+
+    .couple-and {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      color: #a9232c;
+      font-size: 2rem;
+      font-family: Great Vibes, cursive;
+    }
+
+    .couple-and::before,
+    .couple-and::after {
+      width: 58px;
+      height: 1px;
+      background: rgba(173, 32, 42, .48);
+      content: "";
+    }
+
+    .parents {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.65;
+    }
+
+    .parents strong {
+      display: grid;
+      margin-top: 3px;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .parents-ampersand {
+      display: block;
+      font-style: normal;
+    }
+
+    .detail-card {
+      padding: 35px 25px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      box-shadow: 0 12px 35px rgba(90, 53, 27, .05);
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      margin: 18px 0 0;
+    }
+
+    .detail-item {
+      padding: 10px;
+    }
+
+    .detail-card>.detail-item {
+      padding: 6px 10px 10px;
+    }
+
+    .detail-item+.detail-item {
+      border-left: 1px solid var(--line);
+    }
+
+    .detail-item h3 {
+      margin: 0 0 8px;
+      color: var(--red);
+      font-family: Arial, sans-serif;
+      font-size: .75rem;
+      font-weight: 400;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .detail-item p {
+      margin: 0;
+    }
+
+    .location {
+      color: var(--muted);
+    }
+
+    .map-link {
+      margin-top: 14px;
+      font-size: .9rem;
+      text-decoration: none;
+    }
+
+    .map-link:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .rsvp-section {
+      position: relative;
+      background: #f4ead8;
+    }
+
+    .rsvp-section::before,
+    .closing::before {
+      position: absolute;
+      z-index: 0;
+      right: 0;
+      left: 0;
+      height: 56px;
+      content: "";
+      pointer-events: none;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      background-size: 100% 100%;
+    }
+
+    .rsvp-section>*,
+    .closing>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    .rsvp-section::before {
+      top: -55px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath fill='%23f4ead8' d='M0 62 C150 38 250 30 390 39 C535 48 610 72 760 62 C930 50 970 10 1100 20 C1235 30 1325 70 1440 61 L1440 100 L0 100 Z'/%3E%3C/svg%3E");
+    }
+
+    .rsvp-form {
+      max-width: 540px;
+      margin: 30px auto 0;
+      padding: 0;
+      text-align: left;
+    }
+
+    .field {
+      margin-bottom: 22px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      min-height: 56px;
+      padding: 12px 18px;
+      border: 1px solid var(--red);
+      border-radius: 0;
+      color: var(--ink);
+      background: transparent;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: #a93436;
+      opacity: 1;
+    }
+
+    .field textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: 2px solid rgba(169, 52, 54, .2);
+      border-color: var(--red);
+    }
+
+    .rsvp-form .button {
+      width: 100%;
+    }
+
+    .form-status {
+      min-height: 1.6em;
+      margin: 15px 0 0;
+      color: var(--maroon);
+      font-size: .9rem;
+    }
+
+    .closing {
+      position: relative;
+      padding: 72px 20px 56px;
+      color: #f9f1e3;
+      background: var(--maroon);
+      font-family: "Great Vibes", cursive;
+      text-align: center;
+    }
+
+    .closing::before {
+      top: -55px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath fill='%23761f2a' d='M0 62 C150 38 250 30 390 39 C535 48 610 72 760 62 C930 50 970 10 1100 20 C1235 30 1325 70 1440 61 L1440 100 L0 100 Z'/%3E%3C/svg%3E");
+    }
+
+    .closing h4 {
+      max-width: 520px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1rem;
+      font-weight: 500;
+      font-style: italic;
+      line-height: 1.7;
+    }
+
+    .closing .ornament {
+      margin: 0 auto 24px;
+    }
+
+    .closing .footer-message {
+      margin-bottom: 30px;
+      padding: 0 8px;
+    }
+
+    .closing .thanks {
+      margin: 0 auto 16px;
+      color: #e5ca91;
+      font-size: 2.5rem;
+      line-height: 1.15;
+    }
+
+    .closing .footer-signoff {
+      margin-bottom: 14px;
+    }
+
+    .closing .footer-names {
+      margin: 0;
+      font-size: 2.3rem;
+      line-height: 1.15;
+      color: #e5ca91;
+    }
+
+    .edit-note {
+      width: min(100% - 32px, 760px);
+      margin: 24px auto;
+      padding: 13px 16px;
+      border-left: 3px solid var(--gold);
+      color: var(--muted);
+      background: var(--paper);
+      font: .85rem/1.6 Arial, sans-serif;
+    }
+
+    @container (max-width: 560px) {
+      .cover-inner {
+        padding: 22px 16px;
+      }
+
+      .cover-floral-top {
+        height: min(29svh, 280px);
+      }
+
+      .cover-floral-bottom {
+        height: min(25svh, 250px);
+      }
+
+      .section {
+        padding: 66px 18px;
+      }
+
+      .couple {
+        gap: 20px;
+      }
+
+      .couple-card {
+        padding: 8px;
+      }
+
+      .couple-card::before {
+        inset: 7px;
+      }
+
+      .couple-card-content {
+        padding: 34px 18px 28px;
+      }
+
+      .couple-and {
+        gap: 12px;
+        font-size: 1.75rem;
+      }
+
+      .couple-and::before,
+      .couple-and::after {
+        width: 42px;
+      }
+
+      .detail-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .detail-item+.detail-item {
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal-ready .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body class="is-locked">
+  <header class="cover" id="cover">
+    <img class="cover-floral cover-floral-top" src="assets/sangjit-floral-top.png" alt="" aria-hidden="true">
+    <img class="cover-floral cover-floral-bottom" src="assets/sangjit-floral-bottom.png" alt="" aria-hidden="true">
+    <div class="cover-inner">
+      <div class="seal" aria-hidden="true">囍</div>
+      <p class="eyebrow">Sangjit & Tea Ceremony</p>
+      <h1><span data-groom-nickname>Nama Panggilan Mempelai Pria</span><br><span class="ampersand">&amp;</span><br><span
+          data-bride-nickname>Nama Panggilan Mempelai Wanita</span></h1>
+      <p class="guest-label">Kepada Yth.</p>
+      <p class="guest" id="guest-name">Bapak/Ibu/Saudara/i</p>
+      <p class="guest-label">Kami mengundang Anda untuk hadir di hari bahagia kami.</p>
+      <button class="button" id="open-invitation" type="button">Buka Undangan <span aria-hidden="true"></span></button>
+    </div>
+  </header>
+
+  <button class="music-toggle" id="music-toggle" type="button" aria-label="Putar musik" aria-pressed="false"
+    title="Putar musik">
+    <svg class="icon-playing" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M11 5 6 9H3v6h3l5 4z" />
+      <path d="M15.5 8.5a5 5 0 0 1 0 7m3-10a9 9 0 0 1 0 13" />
+    </svg>
+    <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M11 5 6 9H3v6h3l5 4z" />
+      <path d="m17 9 5 6m0-6-5 6" />
+    </svg>
+  </button>
+  <audio id="background-music" loop preload="none"></audio>
+
+  <main id="invitation-content" inert>
+    <section class="section reveal" id="couple">
+      <div class="section-inner">
+        <div class="couple-card">
+          <div class="couple-card-content">
+            <p class="eyebrow">Merayakan kasih dan kebersamaan</p>
+            <h2>Hari Sangjit Kami</h2>
+            <div class="ornament" aria-hidden="true">❖</div>
+            <!-- <p class="intro">Dengan rasa syukur dan bahagia, kami mengundang Bapak/Ibu/Saudara/i untuk menyaksikan dan
+              merayakan prosesi Sangjit kami.</p> -->
+            <div class="couple-card-ornament" aria-hidden="true">❧　囍　❧</div>
+            <div class="couple">
+              <div>
+                <div class="couple-name" data-bride-full-name>Nama Lengkap Mempelai Wanita</div>
+                <p class="parents">Putri dari<br><strong data-bride-parents>Nama Orang Tua Mempelai Wanita</strong></p>
+              </div>
+              <div class="couple-and" aria-hidden="true">&amp;</div>
+              <div>
+                <div class="couple-name" data-groom-full-name>Nama Lengkap Mempelai Pria</div>
+                <p class="parents">Putra dari<br><strong data-groom-parents>Nama Orang Tua Mempelai Pria</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="acara">
+      <div class="section-inner">
+        <p class="eyebrow">Mohon kesediaan hadir</p>
+        <h2>Waktu &amp; Tempat</h2>
+        <div class="ornament" aria-hidden="true">❖</div>
+        <div class="detail-card">
+          <div class="detail-grid">
+            <div class="detail-item">
+              <h3>Hari &amp; Tanggal</h3>
+              <p data-date>Hari, tanggal acara</p>
+            </div>
+            <div class="detail-item">
+              <h3>Waktu</h3>
+              <p data-time>Jam mulai – selesai</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <h3>Lokasi</h3>
+            <p data-venue>Nama gedung / tempat acara</p>
+            <p class="location" data-address>Alamat lengkap tempat acara</p>
+            <a class="button map-link" data-map href="https://maps.google.com" target="_blank"
+              rel="noopener noreferrer">Lihat lokasi di peta ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section rsvp-section reveal" id="rsvp">
+      <div class="section-inner">
+        <p class="eyebrow">Mohon konfirmasi kehadiran</p>
+        <h2>RSVP</h2>
+        <div class="ornament" aria-hidden="true">❖</div>
+        <p class="intro">Silakan isi konfirmasi kehadiran Anda melalui formulir berikut.</p>
+        <form class="rsvp-form" id="rsvp-form">
+          <div class="field">
+            <label for="name">Nama</label>
+            <input id="name" name="name" autocomplete="name" maxlength="100" placeholder="Nama lengkap" required>
+          </div>
+          <div class="field">
+            <label for="attendance">Konfirmasi kehadiran</label>
+            <select id="attendance" name="attendance" required>
+              <option value="">Pilih jawaban</option>
+              <option value="Hadir">Dengan senang hati, saya akan hadir</option>
+              <option value="Tidak hadir">Mohon maaf, saya belum dapat hadir</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="guests">Jumlah tamu (termasuk Anda)</label>
+            <select id="guests" name="guests">
+              <option value="1">1 orang</option>
+              <option value="2">2 orang</option>
+              <option value="3">3 orang</option>
+              <option value="4">4 orang</option>
+              <option value="5">5 orang</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Pesan untuk kedua mempelai (opsional)</label>
+            <textarea id="message" name="message" maxlength="500" placeholder="Pesan (opsional)"></textarea>
+          </div>
+          <button class="button" type="submit">Kirim Konfirmasi</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="closing reveal" inert>
+    <div class="ornament" aria-hidden="true">❖</div>
+    <h4 class="footer-message">Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i
+      berkenan hadir untuk
+      memberikan doa restu.</h4>
+    <p class="thanks">Terima kasih</p>
+    <h4 class="footer-signoff">Kami yang berbahagia</h4>
+    <p class="footer-names"><span data-groom-nickname>Nama Panggilan Mempelai Pria</span><br> &amp; <br><span
+        data-bride-nickname>Nama Panggilan
+        Mempelai Wanita</span></p>
+    <!-- <p style="margin-top: 18px; color: #d7bd9b;">囍</p> -->
+  </footer>
+
+  <script>
+    const CONFIG = {
+      groomNickname: "Natasha",
+      brideNickname: "Candra",
+      groomFullName: "Ida I Dewa Rai Candra Widnyana",
+      brideFullName: "Natasha Setiawijaya",
+      groomParents: "Bapak Ida I Dewa Rai Darma Laksana & Ibu Ni Komang Sariani ",
+      brideParents: "Bapak Budianto Widjaja & Ibu Loka Satyawati ",
+      date: "Kamis, 10 Desember 2026",
+      time: "10.00 – 13.00 WITA",
+      venue: "Hongkong Garden Restaurant",
+      address: "Jl. Bypass Ngurah Rai No.8, Kesiman Kertalangu, Kec. Denpasar Tim., Kota Denpasar, Bali 80237",
+      mapUrl: "https://maps.app.goo.gl/RLhTQbYXZ19DMwqKA",
+      musicUrl: "assets/lagu-undangan.mp3",
+      // Paste the deployed Google Apps Script Web App URL here.
+      googleSheetsUrl: "https://script.google.com/macros/s/AKfycbyg1AWn7xifh-1xKCsKHgTxo3jad2q1m_yoLixvidza_Cb6TnOZ7_xuZ3pIO8V8KWGX/exec"
+    };
+
+    for (const [key, value] of Object.entries(CONFIG)) {
+      if (key === "googleSheetsUrl" || key === "mapUrl") continue;
+      document.querySelectorAll(`[data-${key.replace(/[A-Z]/g, letter => `-${letter.toLowerCase()}`)}]`)
+        .forEach(element => {
+          if (key.endsWith("Parents")) {
+            const names = value.split(/\s*&\s*/);
+            if (names.length === 2) {
+              const firstParent = document.createElement("span");
+              firstParent.textContent = names[0].trim();
+              const ampersand = document.createElement("span");
+              ampersand.className = "parents-ampersand";
+              ampersand.textContent = "&";
+              const secondParent = document.createElement("span");
+              secondParent.textContent = names[1].trim();
+              element.replaceChildren(firstParent, ampersand, secondParent);
+              return;
+            }
+          }
+          element.textContent = value;
+        });
+    }
+    document.title = `Undangan Sangjit | ${CONFIG.groomFullName} & ${CONFIG.brideFullName}`;
+    document.querySelector("[data-map]").href = CONFIG.mapUrl;
+    const guest = new URLSearchParams(window.location.search).get("to");
+    if (guest) document.getElementById("guest-name").textContent = guest.slice(0, 100);
+
+    const openButton = document.getElementById("open-invitation");
+    const musicButton = document.getElementById("music-toggle");
+    const backgroundMusic = document.getElementById("background-music");
+    const invitationContent = document.getElementById("invitation-content");
+    const footer = document.querySelector(".closing");
+    let musicSourceConfigured = false;
+    let musicPlaying = false;
+    let musicPausedByGuest = false;
+    const revealTargets = document.querySelectorAll(".reveal");
+    let revealObserver;
+
+    function revealInvitationSections() {
+      if (!("IntersectionObserver" in window)) {
+        revealTargets.forEach(section => section.classList.add("is-visible"));
+        return;
+      }
+
+      revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.14, rootMargin: "0px 0px -6% 0px" });
+
+      document.body.classList.add("reveal-ready");
+      revealTargets.forEach(section => revealObserver.observe(section));
+    }
+
+    window.addEventListener("wheel", event => {
+      if (document.body.classList.contains("is-locked")) event.preventDefault();
+    }, { passive: false });
+    window.addEventListener("touchmove", event => {
+      if (document.body.classList.contains("is-locked")) event.preventDefault();
+    }, { passive: false });
+
+    function updateMusicButton() {
+      musicButton.setAttribute("aria-pressed", String(musicPlaying));
+      musicButton.setAttribute("aria-label", musicPlaying ? "Jeda musik" : "Putar musik");
+      musicButton.title = musicPlaying ? "Jeda musik" : "Putar musik";
+    }
+
+    async function startMusic() {
+      try {
+        if (!CONFIG.musicUrl) {
+          throw new Error("Tambahkan lokasi file lagu pada CONFIG.musicUrl.");
+        }
+
+        if (!musicSourceConfigured) {
+          backgroundMusic.src = CONFIG.musicUrl;
+          musicSourceConfigured = true;
+        }
+
+        await backgroundMusic.play();
+        musicPausedByGuest = false;
+        musicPlaying = true;
+        updateMusicButton();
+      } catch (error) {
+        musicPlaying = false;
+        updateMusicButton();
+        musicButton.setAttribute("aria-label", "Musik gagal diputar. Tekan untuk mencoba lagi.");
+        musicButton.title = `Musik gagal diputar: ${error.message}`;
+        console.error("Musik undangan gagal diputar:", error);
+      }
+    }
+
+    function pauseMusic() {
+      musicPlaying = false;
+      musicPausedByGuest = true;
+      backgroundMusic.pause();
+      updateMusicButton();
+    }
+
+    musicButton.addEventListener("click", () => {
+      if (musicPlaying) pauseMusic();
+      else startMusic();
+    });
+
+    openButton.addEventListener("click", () => {
+      document.documentElement.classList.remove("is-locked");
+      document.body.classList.remove("is-locked");
+      invitationContent.removeAttribute("inert");
+      footer.removeAttribute("inert");
+      revealInvitationSections();
+      if (!musicPlaying && !musicPausedByGuest) startMusic();
+      document.getElementById("couple").scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+      });
+    });
+
+    const form = document.getElementById("rsvp-form");
+    const status = document.getElementById("form-status");
+    const storageKey = "sangjit-rsvp";
+
+    function getResponses() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(storageKey) || "[]");
+        return Array.isArray(saved) ? saved : [];
+      } catch (error) {
+        throw new Error("Data RSVP tersimpan tidak dapat dibaca di browser ini.");
+      }
+    }
+
+    function downloadCsv(responses) {
+      const columns = ["Waktu konfirmasi", "Nama", "Kehadiran", "Jumlah tamu", "Pesan"];
+      const quote = value => `"${String(value ?? "").replace(/"/g, '""')}"`;
+      const rows = responses.map(response => [
+        response.submittedAt, response.name, response.attendance, response.guests, response.message
+      ]);
+      const csv = "\uFEFF" + [columns, ...rows].map(row => row.map(quote).join(",")).join("\r\n");
+      const url = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "rsvp-sangjit.csv";
+      link.click();
+      URL.revokeObjectURL(url);
+    }
+
+    form.addEventListener("submit", async event => {
+      event.preventDefault();
+      status.textContent = "";
+      const data = new FormData(form);
+      const response = {
+        submittedAt: new Date().toISOString(),
+        name: String(data.get("name")).trim(),
+        attendance: String(data.get("attendance")),
+        guests: String(data.get("guests")),
+        message: String(data.get("message") || "").trim()
+      };
+
+      try {
+        if (CONFIG.googleSheetsUrl) {
+          await fetch(CONFIG.googleSheetsUrl, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify(response)
+          });
+          status.textContent = "Terima kasih! Konfirmasi kehadiran Anda telah dikirim.";
+        } else {
+          const responses = getResponses();
+          responses.push(response);
+          localStorage.setItem(storageKey, JSON.stringify(responses));
+          status.textContent = "Terima kasih! RSVP tersimpan di browser ini. Pengelola dapat mengunduh respons sebagai CSV untuk dibuka di Excel.";
+
+          const exportButton = document.createElement("button");
+          exportButton.type = "button";
+          exportButton.className = "button export-button";
+          exportButton.style.marginTop = "12px";
+          exportButton.textContent = "Unduh RSVP (CSV / Excel)";
+          exportButton.addEventListener("click", () => {
+            try {
+              downloadCsv(getResponses());
+            } catch (error) {
+              status.textContent = error.message;
+            }
+          });
+          form.querySelector(".export-button")?.remove();
+          status.after(exportButton);
+        }
+        form.reset();
+      } catch (error) {
+        status.textContent = CONFIG.googleSheetsUrl
+          ? `Pengiriman RSVP gagal. Silakan coba kembali. (${error.message})`
+          : `RSVP belum tersimpan: ${error.message}`;
+      }
+    });
+  </script>
+</body>
+
+</html>
