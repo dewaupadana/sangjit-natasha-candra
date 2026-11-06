@@ -166,13 +166,13 @@
     }
 
     .seal {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 6px;
+      width: 76px;
+      height: 76px;
+      margin: 0 auto 16px;
       display: grid;
       place-items: center;
       color: #e6ca77;
-      font-size: 54px;
+      font-size: 76px;
       line-height: 1;
     }
 
@@ -185,14 +185,22 @@
       text-transform: uppercase;
     }
 
+    .cover .eyebrow {
+      margin-bottom: 15px;
+      color: #f5e8cf;
+      font-size: .82rem;
+      letter-spacing: .14em;
+      text-shadow: 0 1px 8px rgba(48, 9, 14, .45);
+    }
+
     .cover h1 {
-      margin: 12px 0;
+      margin: 14px 0;
       color: #e6c46c;
       font-family: "Great Vibes", cursive;
-      font-size: clamp(3.2rem, 12vw, 5rem);
+      font-size: clamp(2.8rem, 10vw, 4.5rem);
       font-weight: 400;
-      letter-spacing: 0;
-      line-height: 1;
+      letter-spacing: -.02em;
+      line-height: .9;
     }
 
     .cover .ampersand {
@@ -360,6 +368,7 @@
 
     .couple-card::before {
       position: absolute;
+      z-index: 0;
       inset: 8px;
       background: linear-gradient(145deg, #fffaf0, #f8eddf);
       clip-path: polygon(0 13px, 13px 13px, 13px 0, calc(100% - 13px) 0, calc(100% - 13px) 13px, 100% 13px, 100% calc(100% - 13px), calc(100% - 13px) calc(100% - 13px), calc(100% - 13px) 100%, 13px 100%, 13px calc(100% - 13px), 0 calc(100% - 13px));
@@ -769,8 +778,8 @@
             <p class="eyebrow">Merayakan kasih dan kebersamaan</p>
             <h2>Hari Sangjit Kami</h2>
             <div class="ornament" aria-hidden="true">❖</div>
-            <!-- <p class="intro">Dengan rasa syukur dan bahagia, kami mengundang Bapak/Ibu/Saudara/i untuk menyaksikan dan
-              merayakan prosesi Sangjit kami.</p> -->
+            <p class="intro">Dengan rasa syukur dan bahagia, kami mengundang Bapak/Ibu/Saudara/i untuk menyaksikan dan
+              merayakan prosesi Sangjit kami.</p>
             <div class="couple-card-ornament" aria-hidden="true">❧　囍　❧</div>
             <div class="couple">
               <div>
@@ -809,7 +818,7 @@
             <p data-venue>Nama gedung / tempat acara</p>
             <p class="location" data-address>Alamat lengkap tempat acara</p>
             <a class="button map-link" data-map href="https://maps.google.com" target="_blank"
-              rel="noopener noreferrer">Lihat lokasi di peta ↗</a>
+              rel="noopener noreferrer">Lihat lokasi di peta</a>
           </div>
         </div>
       </div>
@@ -832,16 +841,6 @@
               <option value="">Pilih jawaban</option>
               <option value="Hadir">Dengan senang hati, saya akan hadir</option>
               <option value="Tidak hadir">Mohon maaf, saya belum dapat hadir</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="guests">Jumlah tamu (termasuk Anda)</label>
-            <select id="guests" name="guests">
-              <option value="1">1 orang</option>
-              <option value="2">2 orang</option>
-              <option value="3">3 orang</option>
-              <option value="4">4 orang</option>
-              <option value="5">5 orang</option>
             </select>
           </div>
           <div class="field">
@@ -1016,10 +1015,10 @@
     }
 
     function downloadCsv(responses) {
-      const columns = ["Waktu konfirmasi", "Nama", "Kehadiran", "Jumlah tamu", "Pesan"];
+      const columns = ["Waktu konfirmasi", "Nama", "Kehadiran", "Pesan"];
       const quote = value => `"${String(value ?? "").replace(/"/g, '""')}"`;
       const rows = responses.map(response => [
-        response.submittedAt, response.name, response.attendance, response.guests, response.message
+        response.submittedAt, response.name, response.attendance, response.message
       ]);
       const csv = "\uFEFF" + [columns, ...rows].map(row => row.map(quote).join(",")).join("\r\n");
       const url = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
@@ -1038,7 +1037,6 @@
         submittedAt: new Date().toISOString(),
         name: String(data.get("name")).trim(),
         attendance: String(data.get("attendance")),
-        guests: String(data.get("guests")),
         message: String(data.get("message") || "").trim()
       };
 
