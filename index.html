@@ -168,7 +168,7 @@
     .seal {
       width: 76px;
       height: 76px;
-      margin: 0 auto 16px;
+      margin: 0 auto 22px;
       display: grid;
       place-items: center;
       color: #e6ca77;
@@ -186,7 +186,7 @@
     }
 
     .cover .eyebrow {
-      margin-bottom: 15px;
+      margin-bottom: 48px;
       color: #f5e8cf;
       font-size: .82rem;
       letter-spacing: .14em;
@@ -194,7 +194,7 @@
     }
 
     .cover h1 {
-      margin: 14px 0;
+      margin: 0 0 14px;
       color: #e6c46c;
       font-family: "Great Vibes", cursive;
       font-size: clamp(2.8rem, 10vw, 4.5rem);
@@ -844,6 +844,15 @@
             </select>
           </div>
           <div class="field">
+            <label for="guests">Jumlah tamu yang hadir</label>
+            <select id="guests" name="guests" required>
+              <option value="1">1 orang</option>
+              <option value="2">2 orang</option>
+              <option value="3">3 orang</option>
+              <option value="4">4 orang</option>
+            </select>
+          </div>
+          <div class="field">
             <label for="message">Pesan untuk kedua mempelai (opsional)</label>
             <textarea id="message" name="message" maxlength="500" placeholder="Pesan (opsional)"></textarea>
           </div>
@@ -1015,10 +1024,10 @@
     }
 
     function downloadCsv(responses) {
-      const columns = ["Waktu konfirmasi", "Nama", "Kehadiran", "Pesan"];
+      const columns = ["Waktu konfirmasi", "Nama", "Kehadiran", "Jumlah tamu", "Pesan"];
       const quote = value => `"${String(value ?? "").replace(/"/g, '""')}"`;
       const rows = responses.map(response => [
-        response.submittedAt, response.name, response.attendance, response.message
+        response.submittedAt, response.name, response.attendance, response.guests, response.message
       ]);
       const csv = "\uFEFF" + [columns, ...rows].map(row => row.map(quote).join(",")).join("\r\n");
       const url = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
@@ -1037,6 +1046,7 @@
         submittedAt: new Date().toISOString(),
         name: String(data.get("name")).trim(),
         attendance: String(data.get("attendance")),
+        guests: String(data.get("guests")),
         message: String(data.get("message") || "").trim()
       };
 

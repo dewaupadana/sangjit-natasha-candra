@@ -14,3 +14,5 @@ Buka `index.html`, lalu ubah nilai di objek `CONFIG` dekat akhir file:
 - `googleSheetsUrl`: URL Web App Apps Script (petunjuk di bawah)
 
 Nama tamu dapat ditampilkan pada sampul menggunakan parameter URL, misalnya `?to=Bapak%20Andi`.
+
+Form RSVP menyediakan pilihan jumlah tamu yang hadir dari 1 sampai 4 orang.
