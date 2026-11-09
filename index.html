@@ -768,7 +768,7 @@
       <path d="m17 9 5 6m0-6-5 6" />
     </svg>
   </button>
-  <audio id="background-music" loop preload="none"></audio>
+  <audio id="background-music" autoplay loop preload="auto"></audio>
 
   <main id="invitation-content" inert>
     <section class="section reveal" id="couple">
@@ -980,6 +980,11 @@
       } catch (error) {
         musicPlaying = false;
         updateMusicButton();
+        if (error.name === "NotAllowedError") {
+          musicButton.setAttribute("aria-label", "Putar musik");
+          musicButton.title = "Browser memblokir autoplay. Tekan untuk memutar musik.";
+          return;
+        }
         musicButton.setAttribute("aria-label", "Musik gagal diputar. Tekan untuk mencoba lagi.");
         musicButton.title = `Musik gagal diputar: ${error.message}`;
         console.error("Musik undangan gagal diputar:", error);
@@ -997,6 +1002,8 @@
       if (musicPlaying) pauseMusic();
       else startMusic();
     });
+
+    startMusic();
 
     openButton.addEventListener("click", () => {
       document.documentElement.classList.remove("is-locked");

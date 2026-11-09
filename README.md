@@ -16,3 +16,5 @@ Buka `index.html`, lalu ubah nilai di objek `CONFIG` dekat akhir file:
 Nama tamu dapat ditampilkan pada sampul menggunakan parameter URL, misalnya `?to=Bapak%20Andi`.
 
 Form RSVP menyediakan pilihan jumlah tamu yang hadir dari 1 sampai 4 orang.
+
+Musik dicoba diputar otomatis saat halaman dibuka. Jika browser memblokir autoplay, tekan tombol musik atau “Buka Undangan” untuk memulai pemutaran.
